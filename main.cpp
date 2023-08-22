@@ -6,6 +6,7 @@
 DEFINE_string(example_file_path, "input.wav", "Test wave input file");
 DEFINE_string(output_file_path, "output.wav", "Test wave output file");
 DEFINE_int32(max_samples, 16777216, "Max samples per channel");
+DEFINE_int32(tempo, -5, "Tempo change");
 
 using namespace soundtouch;
 
@@ -65,8 +66,8 @@ int main(int argc, char* argv[]) {
     soundTouch.setSampleRate(nSampleRate);
     soundTouch.setChannels(nChannels);
 
-    // slower to 0.98
-    soundTouch.setTempoChange(-10.0f);
+    // change tempo
+    soundTouch.setTempoChange((float)FLAGS_tempo);
 
     // set for speech
     soundTouch.setSetting(SETTING_SEQUENCE_MS, 40);
@@ -90,7 +91,7 @@ int main(int argc, char* argv[]) {
     soundTouch.putSamples(sampleBuffer, nSamples);
 
     // stretch
-    int targetSamples = nSamples * 100 / 90;
+    int targetSamples = nSamples * 100 / (100 + FLAGS_tempo);
     audioFile.setAudioBufferSize(nChannels, targetSamples);
     int offset = 0;
     int buffNumSamples;
