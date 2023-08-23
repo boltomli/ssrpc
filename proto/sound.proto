@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message StretchRequest {
+    bytes wave = 1;
+    int32 tempo = 2;
+}
+
+message StretchResponse {
+    bytes wave = 1;
+}
+
+service Sound {
+	rpc Stretch(StretchRequest) returns (StretchResponse);
+};
