@@ -2,6 +2,7 @@
 audiofile/1.1.0
 gflags/2.2.2
 glog/0.6.0
+protobuf/3.21.12
 soundtouch/2.3.2
 
 [generators]
