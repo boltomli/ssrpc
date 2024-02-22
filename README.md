@@ -17,6 +17,6 @@ Follow [soundtouch](https://codeberg.org/soundtouch/soundtouch)
 ```
 mkdir build && cd build
 conan install .. --profile ../profile.txt --build missing
-CC=/usr/bin/gcc-12 CXX=/usr/bin/g++-12 cmake .. -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release
+cmake .. -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release
 cmake --build .
 ```
