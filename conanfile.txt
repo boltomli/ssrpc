@@ -1,5 +1,5 @@
 [requires]
-audiofile/1.1.0
+audiofile/1.1.2
 gflags/2.2.2
 glog/0.6.0
 protobuf/3.21.12
